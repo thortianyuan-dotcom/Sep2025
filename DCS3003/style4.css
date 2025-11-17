@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* =========================
+   科技感头部和底部样式（以style3为主）
+   ========================= */
+header, footer {
+  color: white;
+  text-align: center;
+  padding: 20px 5px;
+  position: relative;
+  overflow: hidden;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 流动背景基础样式 */
+header::before, footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    #00b4db, #0083b0,
+    #00f2fe, #4facfe,
+    #667eea, #764ba2,
+    #00b4db
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 8s ease infinite;
+  z-index: 1;
+}
+
+/* 数据网格纹理 */
+.tech-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 2;
+  opacity: 0.3;
+}
+
+/* 扫描线效果 */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: scanLine 3s linear infinite;
+  z-index: 3;
+}
+
+/* 流动动画 */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* 文字效果 */
+header h1, footer p {
+  position: relative;
+  z-index: 4;
+  text-shadow: 
+    0 0 10px rgba(0, 245, 255, 0.7),
+    0 0 20px rgba(0, 245, 255, 0.5),
+    0 0 30px rgba(0, 245, 255, 0.3);
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* =========================
+   导航栏样式（融合style2的结构和style3的科技感）
+   ========================= */
+nav {
+  background: linear-gradient(135deg, #1a2a3a, #0d1b2a);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+/* 保持style2的flex布局结构 */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+/* 融合style2的基础结构和style3的科技感效果 */
+nav ul li a {
+  display: block;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  /* 保持style2的基础样式但使用style3的颜色 */
+}
+
+nav ul li a:hover {
+  background: rgba(0, 245, 255, 0.3);
+  box-shadow: 
+    0 0 15px rgba(0, 245, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  /* 使用style3的悬停效果 */
+}
+
+/* =========================
+   内容区域样式（融合两者）
+   ========================= */
+.content {
+  padding: 20px;
+  text-align: center;
+  background: #1e293b;
+  min-height: 400px;
+  /* 保持style2的布局，使用style3的背景色 */
+}
+
+.content-frame {
+  width: 100%;
+  height: 480px;   
+  border: none;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: white;
+  /* 保持style2的尺寸，添加style3的阴影效果 */
+}
+
+/* =========================
+   响应式设计（以style2的断点结构为主，融合style3的颜色）
+   ========================= */
+
+/* =========================
+   Mobile (≤ 360px) - 保持style2的结构
+   ========================= */
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+    background: #0f172a; /* 使用style3的背景色 */
+  }
+
+  nav ul {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  header, footer {
+    min-height: 60px;
+    padding: 15px 5px;
+  }
+  
+  /* 移动端调整科技感元素 */
+  .tech-grid {
+    background-size: 15px 15px;
+    opacity: 0.2;
+  }
+}
+
+/* =========================
+   Tablet (361px – 768px) - 保持style2的结构
+   ========================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    background: #0f172a; /* 使用style3的背景色 */
+  }
+
+  nav ul {
+    flex-direction: row; 
+    justify-content: center; /* 平板端居中显示 */
+  }
+  
+  nav ul li {
+    margin: 3px;
+  }
+}
+
+/* =========================
+   Desktop (≥ 769px) - 保持style2的结构
+   ========================= */
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+    max-width: 1500px;
+    margin: auto;
+    background: #0f172a; /* 使用style3的背景色 */
+  }
+
+  .content {
+    text-align: left;
+  }
+  
+  /* 桌面端增强科技感效果 */
+  header::before, footer::before {
+    animation-duration: 6s; /* 桌面端动画更快 */
+  }
+  
+  nav ul li a {
+    padding: 10px 16px; /* 桌面端按钮更大 */
+  }
+}
+
+/* =========================
+   额外的科技感增强（来自style3）
+   ========================= */
+ 
+/* 确保iframe内容可读 */
+.content-frame {
+  color: #333; /* 确保iframe内文字可读 */
+}
+
+/* 全局链接样式 */
+a {
+  color: #60a5fa;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #93c5fd;
+}

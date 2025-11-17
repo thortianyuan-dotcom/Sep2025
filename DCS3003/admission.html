@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        
+        .admission-steps {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .step {
+            background: white;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        
+        .application-form {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Admission & Application</h2>
+    
+    <div class="admission-steps">
+        <h3>Application Process</h3>
+        <div class="step">1. Complete the online application form</div>
+        <div class="step">2. Submit required documents</div>
+        <div class="step">3. Attend interview (if required)</div>
+        <div class="step">4. Receive admission decision</div>
+        <div class="step">5. Confirm enrollment</div>
+    </div>
+    
+    <div class="application-form">
+        <h3>Online Application Form</h3>
+        <form id="admissionForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname">
+                <div class="error" id="nameError">Please enter your full name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone">
+                <div class="error" id="phoneError">Please enter a valid phone number (10-12 digits)</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="programme">Preferred Programme *</label>
+                <select id="programme" name="programme">
+                    <option value="">Select a programme</option>
+                    <option value="bcs">Bachelor of Computer Science</option>
+                    <option value="mit">Master of IT</option>
+                    <option value="dwd">Diploma in Web Design</option>
+                </select>
+                <div class="error" id="programmeError">Please select a programme</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            // Validation 1: Name (required)
+            const name = document.getElementById('fullname').value;
+            if (name.trim() === '') {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+            
+            // Validation 2: Email format
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+            
+            // Validation 3: Phone number (digits only, 10-12 characters)
+            const phone = document.getElementById('phone').value;
+            const phonePattern = /^\d{10,12}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+            
+            // Validation 4: Programme selection
+            const programme = document.getElementById('programme').value;
+            if (programme === '') {
+                document.getElementById('programmeError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('programmeError').style.display = 'none';
+            }
+            
+            if (isValid) {
+                alert('Application submitted successfully! We will contact you soon.');
+                document.getElementById('admissionForm').reset();
+            }
+            
+            return false; // Prevent actual form submission for demo
+        }
+    </script>
+</body>
+</html>

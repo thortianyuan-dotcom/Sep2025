@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="OIP.jpg" type="image/jpg">
+<title>Student Projects - School of Computing</title>
+<link rel="stylesheet" href="style4.css">
+<style>
+    .main-content {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        min-height: 450px;
+        color: #333;
+        margin: 20px 0;
+    }
+    
+    .project-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .project-card {
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 160px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 6px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .project-title {
+        color: #2c3e50;
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .project-author {
+        color: #7f8c8d;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    
+    .project-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+        min-height: 80px;
+        line-height: 1.5;
+    }
+    
+    .tech-used {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 15px 0;
+        justify-content: center;
+    }
+    
+    .tech-tag {
+        background: #3498db;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+    
+    .view-btn {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s ease;
+    }
+    
+    .view-btn:hover {
+        background: #c0392b;
+    }
+    
+    .section-title {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="tech-grid"></div>
+    <div class="scan-line"></div>
+    <h1>School of Computing</h1>
+</header>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="programmes.html">Programmes</a></li>
+<li><a href="projects.html">Student Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="admission.html">Admission</a></li>
+</ul>
+</nav>
+
+<main class="content">
+    <div class="main-content">
+        <h2 class="section-title">Student Projects Gallery</h2>
+        <p style="text-align: center; margin-bottom: 30px; font-size: 16px;">
+            Explore the innovative projects created by our talented students in the School of Computing
+        </p>
+        
+        <div class="project-gallery">
+            <div class="project-card">
+                <div class="project-image">🛒 E-commerce Platform</div>
+                <div class="project-title">Online Shopping Website</div>
+                <div class="project-author">By: John Smith</div>
+                <div class="project-description">A complete e-commerce solution with user authentication, product catalog, shopping cart, and secure payment processing.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                </div>
+                <button class="view-btn" onclick="alert('Online Shopping Platform by John Smith\n\nFeatures:\n• User registration system\n• Product search and filtering\n• Shopping cart functionality\n• Secure payment processing\n• Order tracking system')">View Project Details</button>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">📱 Fitness Tracker</div>
+                <div class="project-title">Mobile Fitness App</div>
+                <div class="project-author">By: Sarah Lee</div>
+                <div class="project-description">A comprehensive mobile application for tracking workouts, nutrition, and progress with personalized recommendations.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+                <button class="view-btn" onclick="alert('Fitness Tracker App by Sarah Lee\n\nFeatures:\n• Activity tracking with GPS\n• Calorie counter\n• Workout plans\n• Progress analytics\n• Social features')">View Project Details</button>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">🎮 Space Adventure</div>
+                <div class="project-title">2D Browser Game</div>
+                <div class="project-author">By: Mike Chen</div>
+                <div class="project-description">An engaging space exploration game with multiple planets, resource management, and mission-based gameplay.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">HTML5 Canvas</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Web Audio API</span>
+                </div>
+                <button class="view-btn" onclick="alert('Space Adventure Game by Mike Chen\n\nFeatures:\n• Multiple planet exploration\n• Resource collection system\n• Enemy AI combat\n• Progressive difficulty\n• High score tracking')">View Project Details</button>
+            </div>
+        </div>
+        
+        <div class="project-gallery">
+            <div class="project-card">
+                <div class="project-image">📊 Data Dashboard</div>
+                <div class="project-title">Climate Analytics</div>
+                <div class="project-author">By: Emily Johnson</div>
+                <div class="project-description">Interactive dashboard for visualizing global climate data with filtering, comparison tools, and data export features.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <button class="view-btn" onclick="alert('Climate Analytics Dashboard by Emily Johnson\n\nFeatures:\n• Interactive data visualization\n• Historical comparisons\n• Regional filtering\n• Data export functionality\n• Responsive design')">View Project Details</button>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">✅ Task Manager</div>
+                <div class="project-title">Team Collaboration Tool</div>
+                <div class="project-author">By: David Wilson</div>
+                <div class="project-description">Real-time task management system for team collaboration with progress tracking and file sharing capabilities.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <button class="view-btn" onclick="alert('Team Collaboration Tool by David Wilson\n\nFeatures:\n• Real-time task updates\n• Team assignment system\n• Progress tracking\n• File sharing\n• Calendar integration')">View Project Details</button>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">🤖 AI Recognition</div>
+                <div class="project-title">Image Analysis Tool</div>
+                <div class="project-author">By: Lisa Brown</div>
+                <div class="project-description">Machine learning application for object recognition in images using computer vision and neural networks.</div>
+                <div class="tech-used">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+                <button class="view-btn" onclick="alert('Image Analysis Tool by Lisa Brown\n\nFeatures:\n• Multiple object detection\n• Batch image processing\n• Accuracy metrics\n• API integration\n• Web interface')">View Project Details</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="tech-grid"></div>
+    <div class="scan-line"></div>
+    <p>&copy; 2025 School of Computing. All rights reserved.</p>
+</footer>
+</body>
+</html>
